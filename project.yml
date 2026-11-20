@@ -1,0 +1,39 @@
+name: NoodoeProbe
+options:
+  bundleIdPrefix: io.github.noodoeprobe
+  deploymentTarget:
+    iOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  NoodoeProbe:
+    type: application
+    platform: iOS
+    sources:
+      - Sources
+    info:
+      path: Config/Info.plist
+      properties:
+        CFBundleName: NoodoeProbe
+        CFBundleDisplayName: Noodoe Probe
+        CFBundleExecutable: $(EXECUTABLE_NAME)
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundlePackageType: APPL
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSBluetoothAlwaysUsageDescription: 用於檢查 Noodoe 儀表的藍牙廣播與服務（僅讀取，不會寫入任何設定）。
+        UISupportedExternalAccessoryProtocols:
+          - sunray.control
+          - sunray.data
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.noodoeprobe.app
+        TARGETED_DEVICE_FAMILY: "1"
